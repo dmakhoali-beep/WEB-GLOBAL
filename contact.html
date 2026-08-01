@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Ivy Africa — Get a Quote or Enquiry</title>
+<meta name="description" content="Contact Ivy Africa for enterprise technology quotes, training bookings, or consultancy enquiries. Call 051 880 0404 or use our form.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-info h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.contact-info p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+.info-card { display: flex; align-items: flex-start; gap: 14px; padding: 18px; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-subtle); margin-bottom: 12px; }
+.info-card .icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(59,130,246,0.1); color: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.info-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.info-card p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa"></a>
+    <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="training.html" class="nav-link">Training ▾</a>
+        <div class="dropdown">
+          <div class="dropdown-label">Certifications</div>
+          <a href="training.html?vendor=CompTIA">CompTIA</a>
+          <a href="training.html?vendor=PECB">PECB</a>
+          <a href="training.html?vendor=ISACA">ISACA</a>
+          <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
+          <div class="dropdown-label">Delivery</div>
+          <a href="training.html">Classroom</a>
+          <a href="training.html">Virtual Live</a>
+          <a href="training.html">On-Site</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="technology.html" class="nav-link">Technology</a></div>
+      <div class="nav-item"><a href="k12-edtech.html" class="nav-link">K12 & EdTech</a></div>
+      <div class="nav-item"><a href="smme.html" class="nav-link">SMME</a></div>
+      <div class="nav-item"><a href="consultancy.html" class="nav-link">Consultancy</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></div>
+    </nav>
+    <a href="contact.html" class="cta-btn header-cta">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero" style="min-height: 45vh; padding-top: 100px;">
+  <div class="hero-bg"></div>
+  <div class="hero-orb orb-1" style="width: 250px; height: 250px; opacity: 0.2;"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Let's Talk</div>
+    <h1>Start a <span>Conversation</span></h1>
+    <p style="max-width: 520px;">Whether you need a technology quote, want to book a course, or are exploring consultancy — we respond within 4 business hours.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Details</h3>
+        <p>Our team is based in Aliwal North, Eastern Cape, with operations across South Africa and into neighbouring markets.</p>
+        <div class="info-card">
+          <div class="icon">📞</div>
+          <div><h4>Phone</h4><p><a href="tel:0518800404" style="color: var(--text-secondary); text-decoration: none;">051 880 0404</a></p></div>
+        </div>
+        <div class="info-card">
+          <div class="icon">✉</div>
+          <div><h4>Email</h4><p>info@ivyafrica.co.za</p></div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <div><h4>Address</h4><p>Aliwal North, Eastern Cape, South Africa</p></div>
+        </div>
+        <div class="info-card">
+          <div class="icon">🏢</div>
+          <div><h4>Registration</h4><p>2016/041769/07</p></div>
+        </div>
+        <div style="margin-top: 24px;">
+          <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Follow Us</h4>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/ivyafricasa/" target="_blank" aria-label="Facebook">f</a>
+            <a href="https://za.linkedin.com/company/ivy-africa" target="_blank" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 32px;">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px;">Send an Enquiry</h3>
+        <form onsubmit="event.preventDefault(); alert('Thank you. We will respond within 4 business hours.');">
+          <div class="form-group"><label class="form-label">Full Name</label><input type="text" placeholder="Your name" required></div>
+          <div class="form-group"><label class="form-label">Email Address</label><input type="email" placeholder="you@company.com" required></div>
+          <div class="form-group"><label class="form-label">Phone</label><input type="tel" placeholder="+27 ..."></div>
+          <div class="form-group"><label class="form-label">Organisation</label><input type="text" placeholder="Company or school name"></div>
+          <div class="form-group">
+            <label class="form-label">Enquiry Type</label>
+            <select required>
+              <option value="">Select...</option>
+              <option>Technology Quote</option>
+              <option>Training Booking</option>
+              <option>Consultancy</option>
+              <option>K12 / EdTech</option>
+              <option>SMME Enablement</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Message</label><textarea rows="4" placeholder="Tell us what you need..."></textarea></div>
+          <button type="submit" class="cta-btn" style="width: 100%; padding: 12px;">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa" style="height: 36px;"></a>
+        <p>Enterprise technology, professional training, and digital transformation — delivered with African context and global standards. Founded 2016. Reg: 2016/041769/07.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/ivyafricasa/" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://za.linkedin.com/company/ivy-africa" target="_blank" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Divisions</h4>
+        <a href="training.html">Training</a>
+        <a href="technology.html">Technology</a>
+        <a href="k12-edtech.html">K12 & EdTech</a>
+        <a href="smme.html">SMME</a>
+        <a href="consultancy.html">Consultancy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Certifications</h4>
+        <a href="training.html?vendor=CompTIA">CompTIA</a>
+        <a href="training.html?vendor=PECB">PECB</a>
+        <a href="training.html?vendor=ISACA">ISACA</a>
+        <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0518800404">051 880 0404</a>
+        <a href="contact.html">Enquiry Form</a>
+        <a href="contact.html">Aliwal North, EC</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ivy Africa. All rights reserved.</span>
+      <span>Reg: 2016/041769/07 · Aliwal North, Eastern Cape, South Africa</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.mobile-toggle').addEventListener('click', () => {
+  document.querySelector('nav').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>

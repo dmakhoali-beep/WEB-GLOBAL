@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivy Africa — Enterprise Technology & Professional Training</title>
+<meta name="description" content="Ivy Africa delivers enterprise IT infrastructure, professional certification training, and digital transformation consultancy across Africa.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.division-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 40px; }
+.division-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; text-decoration: none; color: inherit; display: block; }
+.division-card:hover { transform: translateY(-6px); border-color: var(--border-glow); box-shadow: 0 24px 48px rgba(0,0,0,0.35); }
+.division-card img { width: 100%; height: 160px; object-fit: cover; }
+.division-card .body { padding: 22px; }
+.division-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.division-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.work-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); transition: all 0.3s ease; }
+.work-card:hover { border-color: var(--border-glow); }
+.work-card img { width: 100%; height: 180px; object-fit: cover; }
+.work-card .body { padding: 20px; }
+.work-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.work-card p { font-size: 13px; color: var(--text-secondary); }
+.work-card .meta { font-size: 11px; color: var(--accent-blue); margin-top: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+.feature-row.reverse { direction: rtl; }
+.feature-row.reverse > * { direction: ltr; }
+.feature-row img { width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle); }
+.feature-row h3 { font-size: 28px; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; }
+.feature-row p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+.feature-list { list-style: none; }
+.feature-list li { padding: 6px 0; font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+.feature-list li::before { content: "✓"; color: var(--accent-blue); font-weight: 700; }
+@media (max-width: 768px) { .feature-row { grid-template-columns: 1fr; gap: 32px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <!-- SWAP THIS FOR YOUR ACTUAL LOGO: <img src="your-logo.png" class="logo-img" alt="Ivy Africa"> -->
+      Ivy<span>Africa</span>
+    </a>
+    <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <div class="nav-item"><a href="index.html" class="nav-link active">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="training.html" class="nav-link">Training ▾</a>
+        <div class="dropdown">
+          <div class="dropdown-label">Certifications</div>
+          <a href="training.html?vendor=CompTIA">CompTIA</a>
+          <a href="training.html?vendor=PECB">PECB</a>
+          <a href="training.html?vendor=ISACA">ISACA</a>
+          <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
+          <div class="dropdown-label">Delivery</div>
+          <a href="training.html">Classroom</a>
+          <a href="training.html">Virtual Live</a>
+          <a href="training.html">On-Site</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="technology.html" class="nav-link">Technology</a></div>
+      <div class="nav-item"><a href="k12-edtech.html" class="nav-link">K12 & EdTech</a></div>
+      <div class="nav-item"><a href="smme.html" class="nav-link">SMME</a></div>
+      <div class="nav-item"><a href="consultancy.html" class="nav-link">Consultancy</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <a href="contact.html" class="cta-btn header-cta">Get a Quote</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="hero-orb orb-3"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Enterprise Technology Partner</div>
+    <h1>Technology That Powers <span>African Enterprise</span></h1>
+    <p>From data centre infrastructure to professional certification training — Ivy Africa is the trusted partner for organisations building the future. Dell · Lenovo · Huawei · CompTIA · PECB · ISACA.</p>
+    <div class="hero-buttons">
+      <a href="technology.html" class="cta-btn">Explore Technology</a>
+      <a href="training.html" class="cta-btn-outline">View Training Catalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER CAROUSEL -->
+<div class="carousel-section">
+  <div class="carousel-track">
+    <div class="carousel-item">DELL</div>
+    <div class="carousel-item">LENOVO</div>
+    <div class="carousel-item">HUAWEI</div>
+    <div class="carousel-item">HP</div>
+    <div class="carousel-item">EATON</div>
+    <div class="carousel-item">ASUS</div>
+    <div class="carousel-item">CompTIA</div>
+    <div class="carousel-item">PECB</div>
+    <div class="carousel-item">ISACA</div>
+    <div class="carousel-item">Pinnacle</div>
+    <div class="carousel-item">First Distribution</div>
+    <div class="carousel-item">Microsoft</div>
+    <div class="carousel-item">Canon</div>
+    <div class="carousel-item">Snapplify</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="carousel-item">DELL</div>
+    <div class="carousel-item">LENOVO</div>
+    <div class="carousel-item">HUAWEI</div>
+    <div class="carousel-item">HP</div>
+    <div class="carousel-item">EATON</div>
+    <div class="carousel-item">ASUS</div>
+    <div class="carousel-item">CompTIA</div>
+    <div class="carousel-item">PECB</div>
+    <div class="carousel-item">ISACA</div>
+    <div class="carousel-item">Pinnacle</div>
+    <div class="carousel-item">First Distribution</div>
+    <div class="carousel-item">Microsoft</div>
+    <div class="carousel-item">Canon</div>
+    <div class="carousel-item">Snapplify</div>
+  </div>
+</div>
+
+<!-- DIVISIONS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>What We <span>Deliver</span></h2>
+      <p>Five integrated divisions. One partner for your entire technology and capability journey.</p>
+    </div>
+    <div class="division-grid">
+      <a href="training.html" class="division-card">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Training">
+        <div class="body">
+          <h3>Professional Training</h3>
+          <p>49 certification courses across CompTIA, PECB, ISACA, and SACE-aligned educator programmes. Classroom, virtual, and on-site delivery.</p>
+          <span class="card-tag tag-blue">49 Courses</span>
+        </div>
+      </a>
+      <a href="technology.html" class="division-card">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Technology">
+        <div class="body">
+          <h3>Enterprise Technology</h3>
+          <p>Data centre infrastructure, endpoint computing, networking, power protection, and cloud hardware from Dell, Lenovo, Huawei, HP, and Eaton.</p>
+          <span class="card-tag tag-red">CIO-Grade</span>
+        </div>
+      </a>
+      <a href="k12-edtech.html" class="division-card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="K12">
+        <div class="body">
+          <h3>K12 & EdTech</h3>
+          <p>Learning supplies, classroom technology, coding & robotics kits, robotics labs, and SACE-aligned teacher training via Snapplify.</p>
+          <span class="card-tag tag-violet">Education</span>
+        </div>
+      </a>
+      <a href="smme.html" class="division-card">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="SMME">
+        <div class="body">
+          <h3>SMME Enablement</h3>
+          <p>Digital starter packs, managed IT services, cloud migration, and flexible payment plans designed for growing businesses.</p>
+          <span class="card-tag tag-cyan">Growth</span>
+        </div>
+      </a>
+      <a href="consultancy.html" class="division-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Consultancy">
+        <div class="body">
+          <h3>Consultancy</h3>
+          <p>ISO implementation, cybersecurity strategy, IT governance, digital transformation roadmaps, and enterprise architecture.</p>
+          <span class="card-tag tag-gold">Strategy</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="background: var(--bg-panel); padding: 60px 24px;">
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="num">2,400+</div>
+        <div class="label">Professionals Trained</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">49</div>
+        <div class="label">Certification Courses</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">180+</div>
+        <div class="label">Enterprise Clients</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">8</div>
+        <div class="label">African Markets</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAST WORK -->
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Work We've <span>Done</span></h2>
+      <p>Real projects. Real outcomes. Across enterprise, government, and education.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Data Centre">
+        <div class="body">
+          <h3>Enterprise Data Centre Refresh</h3>
+          <p>Complete server, storage, and networking overhaul for a national logistics group. Dell PowerEdge + Lenovo ThinkSystem with Eaton UPS.</p>
+          <div class="meta">Infrastructure · 2024</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Training">
+        <div class="body">
+          <h3>Security+ Cohort — 45 Delegates</h3>
+          <p>CompTIA Security+ SY0-701 delivered on-site over 7 days. 98% first-time pass rate. Mixed government and private sector cohort.</p>
+          <div class="meta">Training · 2024</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="STEM Lab">
+        <div class="body">
+          <h3>STEM Lab Build — 3 Schools</h3>
+          <p>Robotics labs with LEGO SPIKE Prime, Arduino kits, and interactive panels. Includes 12-month teacher support programme.</p>
+          <div class="meta">K12 EdTech · 2023</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt="ISO">
+        <div class="body">
+          <h3>ISO 27001 Certification</h3>
+          <p>End-to-end ISMS implementation, gap analysis, internal audit programme, and certification body liaison for a fintech startup.</p>
+          <div class="meta">Consultancy · 2024</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="SMME">
+        <div class="body">
+          <h3>25-SMME Digital Onboarding</h3>
+          <p>Batch deployment of Lenovo ThinkPads, Microsoft 365, cloud backup, and endpoint security for a provincial SMME programme.</p>
+          <div class="meta">SMME · 2023</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" alt="Cloud">
+        <div class="body">
+          <h3>Azure Migration & Security</h3>
+          <p>Lift-and-shift of 42 on-prem workloads to Azure with Sentinel SIEM, Defender for Cloud, and conditional access policies.</p>
+          <div class="meta">Cloud · 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IVY -->
+<section style="background: var(--bg-panel);">
+  <div class="section-inner">
+    <div class="feature-row">
+      <div>
+        <h3>Built for <span class="gradient-text">CIOs and CTOs</span></h3>
+        <p>We speak the language of enterprise architecture. Our technology proposals include TCO analysis, vendor-neutral comparisons, and lifecycle management — not just SKU lists.</p>
+        <ul class="feature-list">
+          <li>vPro-enabled fleet management</li>
+          <li>Zero-touch provisioning (ZTP)</li>
+          <li>TPM 2.0 / BitLocker baseline security</li>
+          <li>Eaton power protection & monitoring</li>
+          <li>Huawei all-flash storage arrays</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Data Centre">
+    </div>
+    <div class="feature-row reverse">
+      <div>
+        <h3>Training That <span class="gradient-text">Transfers to the Job</span></h3>
+        <p>Our instructors are practitioners first, trainers second. Every course includes labs on real equipment, scenario-based assessments, and post-course support.</p>
+        <ul class="feature-list">
+          <li>CompTIA, PECB, ISACA authorised content</li>
+          <li>Hands-on labs with physical and virtual kit</li>
+          <li>Exam vouchers included in course fees</li>
+          <li>Corporate cohort discounts</li>
+          <li>SACE-aligned educator CPD programmes</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Training">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align: center;">
+  <div class="section-inner">
+    <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 12px;">Ready to <span class="gradient-text">Build</span>?</h2>
+    <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 28px;">Whether you are refreshing a data centre, certifying a team, or building a STEM lab — we are ready.</p>
+    <a href="contact.html" class="cta-btn" style="padding: 14px 32px; font-size: 15px;">Start a Conversation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa" style="height: 36px;"></a>
+        <p>Enterprise technology, professional training, and digital transformation — delivered with African context and global standards. Founded 2016. Reg: 2016/041769/07.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/ivyafricasa/" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://za.linkedin.com/company/ivy-africa" target="_blank" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Divisions</h4>
+        <a href="training.html">Training</a>
+        <a href="technology.html">Technology</a>
+        <a href="k12-edtech.html">K12 & EdTech</a>
+        <a href="smme.html">SMME</a>
+        <a href="consultancy.html">Consultancy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Certifications</h4>
+        <a href="training.html?vendor=CompTIA">CompTIA</a>
+        <a href="training.html?vendor=PECB">PECB</a>
+        <a href="training.html?vendor=ISACA">ISACA</a>
+        <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0518800404">051 880 0404</a>
+        <a href="contact.html">Enquiry Form</a>
+        <a href="contact.html">Aliwal North, EC</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ivy Africa. All rights reserved.</span>
+      <span>Reg: 2016/041769/07 · Aliwal North, Eastern Cape, South Africa</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav toggle
+document.querySelector('.mobile-toggle').addEventListener('click', () => {
+  document.querySelector('nav').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>

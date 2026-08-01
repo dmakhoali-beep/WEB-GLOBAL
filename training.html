@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Hub — 49 Certification Courses | Ivy Africa</title>
+<meta name="description" content="Browse 49 professional certification courses from CompTIA, PECB, ISACA, and SACE-aligned Snapplify educator programmes. Classroom, virtual, and on-site.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.filter-bar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+.filter-btn {
+  padding: 8px 18px; border-radius: 100px; border: 1px solid var(--border-subtle);
+  background: var(--bg-card); color: var(--text-secondary); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s ease;
+}
+.filter-btn:hover, .filter-btn.active { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
+.bundle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+.bundle-card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 28px;
+  position: relative; overflow: hidden; transition: all 0.3s ease;
+}
+.bundle-card:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+.bundle-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-accent);
+}
+.bundle-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.bundle-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+.bundle-price { font-size: 24px; font-weight: 800; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.bundle-save { font-size: 12px; color: var(--accent-red); font-weight: 600; margin-top: 4px; }
+.bundle-list { list-style: none; margin: 16px 0; }
+.bundle-list li { font-size: 13px; color: var(--text-secondary); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+.bundle-list li::before { content: '✓'; color: var(--accent-blue); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa"></a>
+    <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <a href="training.html" class="nav-link active">Training ▾</a>
+        <div class="dropdown">
+          <div class="dropdown-label">Certifications</div>
+          <a href="training.html?vendor=CompTIA">CompTIA</a>
+          <a href="training.html?vendor=PECB">PECB</a>
+          <a href="training.html?vendor=ISACA">ISACA</a>
+          <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
+          <div class="dropdown-label">Delivery</div>
+          <a href="training.html">Classroom</a>
+          <a href="training.html">Virtual Live</a>
+          <a href="training.html">On-Site</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="technology.html" class="nav-link">Technology</a></div>
+      <div class="nav-item"><a href="k12-edtech.html" class="nav-link">K12 & EdTech</a></div>
+      <div class="nav-item"><a href="smme.html" class="nav-link">SMME</a></div>
+      <div class="nav-item"><a href="consultancy.html" class="nav-link">Consultancy</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <a href="contact.html" class="cta-btn header-cta">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero" style="min-height: 55vh; padding-top: 100px;">
+  <div class="hero-bg"></div>
+  <div class="hero-orb orb-1" style="width: 350px; height: 350px; opacity: 0.3;"></div>
+  <div class="hero-orb orb-2" style="width: 250px; height: 250px; opacity: 0.25;"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Professional Certification</div>
+    <h1>49 Courses. <span>4 Vendors.</span> One Partner.</h1>
+    <p style="max-width: 580px;">From entry-level IT fundamentals to senior cybersecurity audit. CompTIA, PECB, ISACA, and SACE-aligned educator programmes — delivered your way.</p>
+    <div class="hero-buttons">
+      <a href="#courses" class="cta-btn">Browse Catalog</a>
+      <a href="contact.html" class="cta-btn-outline">Corporate Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Course <span>Catalog</span></h2>
+      <p>Filter by vendor or browse the full catalog. Every course includes materials, labs, and exam voucher guidance.</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCourses('all', this)">All (49)</button>
+      <button class="filter-btn" onclick="filterCourses('CompTIA', this)">CompTIA (14)</button>
+      <button class="filter-btn" onclick="filterCourses('PECB', this)">PECB (21)</button>
+      <button class="filter-btn" onclick="filterCourses('ISACA', this)">ISACA (6)</button>
+      <button class="filter-btn" onclick="filterCourses('Snapplify', this)">SACE / Snapplify (8)</button>
+    </div>
+    <div class="card-grid" id="courseGrid">
+      
+      <a href="comptia-tech-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Beginner</span>
+        </div>
+        <h3>Tech+</h3>
+        <p>Entry-level IT fundamentals — hardware, software, networking, security, and troubleshooting. Perfect for career starters...</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R8,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-a-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Beginner</span>
+        </div>
+        <h3>A+</h3>
+        <p>The industry standard for IT technicians. Covers hardware, mobile devices, networking, virtualization, and security....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 8 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R12,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-network-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Network+</h3>
+        <p>Essential networking skills — design, configure, manage, and troubleshoot wired and wireless networks....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 7 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R11,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-security-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Security+</h3>
+        <p>Core cybersecurity skills — threats, vulnerabilities, cryptography, identity management, and risk mitigation....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 7 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R12,000</span>
+        </div>
+      </a>
+
+      <a href="comptia-cloud-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Cloud+</h3>
+        <p>Cloud architecture, deployment, operations, and troubleshooting across multi-vendor environments....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 6 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R11,000</span>
+        </div>
+      </a>
+
+      <a href="comptia-linux-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Linux+</h3>
+        <p>Linux system administration, command line, scripting, security, and troubleshooting for enterprise environments....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 7 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R11,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-server-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Server+</h3>
+        <p>Server architecture, administration, storage, security, and disaster recovery for on-prem and hybrid....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 6 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R10,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-data-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Data+</h3>
+        <p>Data analytics, mining, visualization, governance, and lifecycle management for data-driven decision making....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 6 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R10,000</span>
+        </div>
+      </a>
+
+      <a href="comptia-project-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Project+</h3>
+        <p>IT project management fundamentals — agile, waterfall, risk, change control, and stakeholder management....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R9,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-cysa-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CySA+</h3>
+        <p>Threat detection, analysis, and response using behavioral analytics and SIEM tools on the security operations frontline....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 7 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R13,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-pentest-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>PenTest+</h3>
+        <p>Hands-on penetration testing — planning, scanning, exploitation, post-exploitation, and reporting....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 8 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R14,500</span>
+        </div>
+      </a>
+
+      <a href="comptia-casp-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CASP+</h3>
+        <p>Enterprise security architecture, integration, and advanced risk management for senior practitioners....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 8 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R15,000</span>
+        </div>
+      </a>
+
+      <a href="comptia-cloud-essentials-plus.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Beginner</span>
+        </div>
+        <h3>Cloud Essentials+</h3>
+        <p>Cloud concepts, business principles, management, and technical perspectives for decision makers....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 4 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R8,000</span>
+        </div>
+      </a>
+
+      <a href="comptia-securityx.html" class="card" data-vendor="CompTIA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-blue">CompTIA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>SecurityX</h3>
+        <p>Advanced security analytics, threat intelligence, and zero-trust architecture for senior analysts....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 8 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R15,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-27001-foundation.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Foundation</span>
+        </div>
+        <h3>ISO 27001 Foundation</h3>
+        <p>Understand information security management principles, controls, and the ISO 27001 framework....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 3 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R8,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-27001-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 27001 Lead Implementer</h3>
+        <p>Plan, implement, manage, and maintain an ISMS aligned with ISO 27001 standards....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R18,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-27001-lead-auditor.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 27001 Lead Auditor</h3>
+        <p>Master audit techniques, planning, and reporting for ISO 27001 certification audits....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R18,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-27002-lead-manager.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 27002 Lead Manager</h3>
+        <p>Implement and manage information security controls using ISO 27002 best practices....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R17,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-27701-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 27701 Lead Implementer</h3>
+        <p>Build and manage a Privacy Information Management System (PIMS) aligned with GDPR....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R18,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-cybersecurity-manager.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>Cybersecurity Manager</h3>
+        <p>Lead cybersecurity strategy, governance, risk management, and incident response programs....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R16,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-cloud-security-analyst.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Cloud Security Analyst</h3>
+        <p>Secure cloud environments across AWS, Azure, and GCP with governance and compliance frameworks....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 4 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R14,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-cleh-certified-lead-ethical-hacker.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CLEH</h3>
+        <p>Advanced ethical hacking methodologies, tools, and reporting for enterprise red teams....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R19,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-ccta-certified-cybersecurity-threat-analyst.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CCTA</h3>
+        <p>Threat intelligence, malware analysis, and proactive defense against advanced persistent threats....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R17,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-22301-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 22301 Lead Implementer</h3>
+        <p>Design and implement business continuity management systems for organizational resilience....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R16,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-9001-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 9001 Lead Implementer</h3>
+        <p>Build quality management systems that drive operational excellence and customer satisfaction....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R15,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-14001-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 14001 Lead Implementer</h3>
+        <p>Implement environmental management systems for sustainable business operations....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R15,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-45001-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 45001 Lead Implementer</h3>
+        <p>Occupational health and safety management systems for risk reduction and compliance....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R15,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-20000-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 20000 Lead Implementer</h3>
+        <p>IT service management aligned with global best practices for service delivery excellence....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R16,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-31000-lead-manager.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 31000 Lead Manager</h3>
+        <p>Enterprise risk management frameworks for strategic decision making and resilience....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R16,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-50001-lead-implementer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 50001 Lead Implementer</h3>
+        <p>Energy management systems for efficiency, sustainability, and cost reduction....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R15,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-gdpr-foundation.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Foundation</span>
+        </div>
+        <h3>GDPR Foundation</h3>
+        <p>Understand EU GDPR requirements, data subject rights, and lawful processing principles....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 2 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R7,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-cdpo-certified-data-protection-officer.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CDPO</h3>
+        <p>Lead data protection strategy, DPIAs, and compliance programs under GDPR....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R17,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-iso-42001-ai-management.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>ISO 42001 AI Management</h3>
+        <p>Governance and management of AI systems — ethics, risk, and lifecycle control....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R18,000</span>
+        </div>
+      </a>
+
+      <a href="pecb-caip-certified-artificial-intelligence-practitioner.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CAIP</h3>
+        <p>Practical AI/ML implementation, model training, deployment, and governance....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R18,500</span>
+        </div>
+      </a>
+
+      <a href="pecb-six-sigma-green-belt.html" class="card" data-vendor="PECB">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-red">PECB</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>Six Sigma Green Belt</h3>
+        <p>Process improvement methodology using DMAIC for quality and efficiency gains....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R14,000</span>
+        </div>
+      </a>
+
+      <a href="isaca-cisa.html" class="card" data-vendor="ISACA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-gold">ISACA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CISA</h3>
+        <p>Certified Information Systems Auditor — the gold standard for IT audit, control, and assurance professionals....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 6 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R22,000</span>
+        </div>
+      </a>
+
+      <a href="isaca-cism.html" class="card" data-vendor="ISACA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-gold">ISACA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CISM</h3>
+        <p>Certified Information Security Manager — enterprise security governance, program development, and incident management....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 6 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R24,000</span>
+        </div>
+      </a>
+
+      <a href="isaca-crisc.html" class="card" data-vendor="ISACA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-gold">ISACA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CRISC</h3>
+        <p>Certified in Risk and Information Systems Control — IT risk identification, assessment, and mitigation....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 6 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R23,000</span>
+        </div>
+      </a>
+
+      <a href="isaca-cgeit.html" class="card" data-vendor="ISACA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-gold">ISACA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CGEIT</h3>
+        <p>Certified in the Governance of Enterprise IT — strategic alignment, value delivery, and resource optimization....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R21,000</span>
+        </div>
+      </a>
+
+      <a href="isaca-cdpse.html" class="card" data-vendor="ISACA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-gold">ISACA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Advanced</span>
+        </div>
+        <h3>CDPSE</h3>
+        <p>Certified Data Privacy Solutions Engineer — privacy engineering, architecture, and data lifecycle protection....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R20,000</span>
+        </div>
+      </a>
+
+      <a href="isaca-csx-f.html" class="card" data-vendor="ISACA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-gold">ISACA</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Intermediate</span>
+        </div>
+        <h3>CSX-F</h3>
+        <p>Cybersecurity Nexus Fundamentals — hands-on foundational skills in cybersecurity operations and defense....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 5 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R16,500</span>
+        </div>
+      </a>
+
+      <a href="snapplify-ict-integration-in-the-classroom.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>ICT Integration in the Classroom</h3>
+        <p>SACE-aligned CPD programme. Embed digital tools and platforms into daily teaching practice for enhanced learner engageme...</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 2 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R3,500</span>
+        </div>
+      </a>
+
+      <a href="snapplify-teaching-coding-and-computational-thinking.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>Teaching Coding & Computational Thinking</h3>
+        <p>SACE-aligned CPD programme. Teach block-based and text-based coding across intermediate and senior phases....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 2 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R3,500</span>
+        </div>
+      </a>
+
+      <a href="snapplify-robotics-facilitation-for-educators.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>Robotics Facilitation for Educators</h3>
+        <p>SACE-aligned CPD programme. Facilitate robotics lessons using LEGO, Arduino, and micro:bit platforms....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 2 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R4,000</span>
+        </div>
+      </a>
+
+      <a href="snapplify-digital-assessment-and-feedback-tools.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>Digital Assessment & Feedback Tools</h3>
+        <p>SACE-aligned CPD programme. Design digital assessments, auto-grading, and data-driven feedback loops....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 1 day</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R2,500</span>
+        </div>
+      </a>
+
+      <a href="snapplify-ebook-and-digital-content-management.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>eBook & Digital Content Management</h3>
+        <p>SACE-aligned CPD programme. Curate, distribute, and manage digital libraries and eLearning content....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 1 day</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R2,500</span>
+        </div>
+      </a>
+
+      <a href="snapplify-gamification-in-education.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>Gamification in Education</h3>
+        <p>SACE-aligned CPD programme. Apply game-design principles to lesson planning and learner motivation strategies....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 2 days</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R3,000</span>
+        </div>
+      </a>
+
+      <a href="snapplify-digital-citizenship-and-online-safety.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>Digital Citizenship & Online Safety</h3>
+        <p>SACE-aligned CPD programme. Guide learners on digital ethics, cyber-safety, and responsible online behavior....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 1 day</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R2,000</span>
+        </div>
+      </a>
+
+      <a href="snapplify-data-literacy-for-teachers.html" class="card" data-vendor="Snapplify">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span class="card-tag tag-violet">Snapplify</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Educator</span>
+        </div>
+        <h3>Data Literacy for Teachers</h3>
+        <p>SACE-aligned CPD programme. Use learner data dashboards to inform instruction and track academic growth....</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          <span>⏱ 1 day</span>
+          <span style="font-weight: 700; color: var(--text-primary);">R2,500</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-panel);">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Training <span>Bundles</span></h2>
+      <p>Save up to 25% when you book multiple courses or enroll a team.</p>
+    </div>
+    <div class="bundle-grid">
+      <div class="bundle-card">
+        <h3>Security Professional Track</h3>
+        <p>CompTIA Security+ → CySA+ → PenTest+ → CASP+. The complete path from core security to enterprise architecture.</p>
+        <ul class="bundle-list">
+          <li>Security+ (SY0-701)</li>
+          <li>CySA+ (CS0-003)</li>
+          <li>PenTest+ (PT0-002)</li>
+          <li>CASP+ (CAS-004)</li>
+        </ul>
+        <div class="bundle-price">R48,000</div>
+        <div class="bundle-save">Save R7,000 vs individual booking</div>
+        <a href="contact.html" class="cta-btn" style="display: block; text-align: center; margin-top: 16px;">Enquire Now</a>
+      </div>
+      <div class="bundle-card">
+        <h3>ISO 27001 Expert Track</h3>
+        <p>Foundation → Lead Implementer → Lead Auditor. Become a certified ISO 27001 specialist in 13 days.</p>
+        <ul class="bundle-list">
+          <li>ISO 27001 Foundation</li>
+          <li>ISO 27001 Lead Implementer</li>
+          <li>ISO 27001 Lead Auditor</li>
+        </ul>
+        <div class="bundle-price">R38,000</div>
+        <div class="bundle-save">Save R7,500 vs individual booking</div>
+        <a href="contact.html" class="cta-btn" style="display: block; text-align: center; margin-top: 16px;">Enquire Now</a>
+      </div>
+      <div class="bundle-card">
+        <h3>ISACA Audit & Risk Track</h3>
+        <p>CISA + CRISC. The dual credential for IT audit and risk professionals seeking senior roles.</p>
+        <ul class="bundle-list">
+          <li>CISA (Certified IS Auditor)</li>
+          <li>CRISC (Risk & Info Systems Control)</li>
+        </ul>
+        <div class="bundle-price">R38,000</div>
+        <div class="bundle-save">Save R7,000 vs individual booking</div>
+        <a href="contact.html" class="cta-btn" style="display: block; text-align: center; margin-top: 16px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Delivery <span>Options</span></h2>
+      <p>Choose the format that fits your schedule, budget, and learning style.</p>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <h3>Classroom — Aliwal North</h3>
+        <p>Immersive in-person training at our Eastern Cape facility. Full lab access, peer networking, and instructor face-time. Includes lunch and materials.</p>
+        <span class="card-tag tag-blue">Most Popular</span>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color: var(--accent-violet); background: rgba(139,92,246,0.1);">💻</div>
+        <h3>Virtual Live Instructor-Led</h3>
+        <p>Same curriculum, same instructor, delivered via Zoom/Teams. Remote lab environments provided. Ideal for distributed teams and busy professionals.</p>
+        <span class="card-tag tag-violet">5% Discount</span>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="color: var(--accent-cyan); background: rgba(6,182,212,0.1);">🚚</div>
+        <h3>On-Site Corporate</h3>
+        <p>We come to you. Custom schedule, private cohort, and content tailored to your environment. Minimum 6 delegates. Available nationwide.</p>
+        <span class="card-tag tag-cyan">Custom Quote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--bg-panel);">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+          Do exam vouchers come with the course?
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-body">
+          <p>Exam vouchers are quoted separately and can be bundled with your course booking. We provide guidance on scheduling your exam at a Pearson VUE or PECB/ISACA testing centre.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+          What is the pass rate for your delegates?
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-body">
+          <p>Our first-time pass rate averages 94% across all vendors. We attribute this to hands-on labs, scenario-based practice exams, and post-course support via our alumni Slack channel.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+          Can you train at our office?
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-body">
+          <p>Yes. Our on-site corporate delivery requires a minimum of 6 delegates. We bring all equipment, materials, and lab environments. Travel costs are quoted based on location.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+          Do you offer payment plans?
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-body">
+          <p>Corporate clients can request 30-day payment terms. Individual learners can split payment 50/50 — 50% deposit to secure seat, 50% before course start date.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('open')">
+          Are SACE CPD points guaranteed?
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-body">
+          <p>All Snapplify educator courses are SACE-aligned and carry verified CPD points. Certificates are issued within 5 business days of course completion and can be uploaded directly to the SACE portal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa" style="height: 36px;"></a>
+        <p>Enterprise technology, professional training, and digital transformation — delivered with African context and global standards. Founded 2016. Reg: 2016/041769/07.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/ivyafricasa/" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://za.linkedin.com/company/ivy-africa" target="_blank" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Divisions</h4>
+        <a href="training.html">Training</a>
+        <a href="technology.html">Technology</a>
+        <a href="k12-edtech.html">K12 & EdTech</a>
+        <a href="smme.html">SMME</a>
+        <a href="consultancy.html">Consultancy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Certifications</h4>
+        <a href="training.html?vendor=CompTIA">CompTIA</a>
+        <a href="training.html?vendor=PECB">PECB</a>
+        <a href="training.html?vendor=ISACA">ISACA</a>
+        <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0518800404">051 880 0404</a>
+        <a href="contact.html">Enquiry Form</a>
+        <a href="contact.html">Aliwal North, EC</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ivy Africa. All rights reserved.</span>
+      <span>Reg: 2016/041769/07 · Aliwal North, Eastern Cape, South Africa</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filterCourses(vendor, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#courseGrid .card').forEach(card => {
+    if (vendor === 'all' || card.dataset.vendor === vendor) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+document.querySelector('.mobile-toggle').addEventListener('click', () => {
+  document.querySelector('nav').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
