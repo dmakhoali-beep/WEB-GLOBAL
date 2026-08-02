@@ -1,272 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enterprise Technology — Dell, Lenovo, Huawei, HP, Eaton | Ivy Africa</title>
-<meta name="description" content="Enterprise IT infrastructure from Dell, Lenovo, Huawei, HP, and Eaton. Data centres, endpoints, networking, power protection, and cloud hardware.">
-<link rel="stylesheet" href="shared.css">
-<style>
-.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
-.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 28px; text-align: center; position: relative; }
-.process-step .num { width: 40px; height: 40px; border-radius: 50%; background: var(--gradient-accent); color: white; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 16px; }
-.process-step h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
-.process-step p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-@media (max-width: 768px) { .process-grid { grid-template-columns: 1fr 1fr; } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology | Ivy Africa — Dell, Lenovo, Huawei, IBM & More</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .tech-hero{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;padding:8rem 0 4rem;}
+    .tech-hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(59,130,246,0.08) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(127,29,29,0.08) 0%,transparent 50%);}
+    .tech-hero-content{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 2rem;width:100%;text-align:center;}
+    .tech-hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;color:#fff;margin-bottom:1rem;}
+    .tech-hero-title .accent{background:linear-gradient(135deg,#3b82f6 0%,#ef4444 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .tech-hero-desc{font-size:1.125rem;color:var(--tech-text-dim);max-width:600px;margin:0 auto 2rem;line-height:1.8;}
+    .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;}
+    .brand-card{background:var(--tech-surface);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:2.5rem;text-align:center;transition:all 0.4s ease;position:relative;overflow:hidden;}
+    .brand-card:hover{transform:translateY(-8px);border-color:rgba(59,130,246,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+    .brand-logo{height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;filter:grayscale(100%) brightness(0.7);opacity:0.6;transition:all 0.4s ease;}
+    .brand-card:hover .brand-logo{filter:grayscale(0%) brightness(1);opacity:1;}
+    .brand-logo svg{max-height:100%;width:auto;}
+    .brand-name{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:0.75rem;}
+    .brand-desc{font-size:0.9375rem;color:var(--tech-text-dim);line-height:1.7;margin-bottom:1.5rem;}
+    .brand-tags{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;}
+    .brand-tag{font-size:0.6875rem;font-weight:600;padding:0.25rem 0.625rem;background:rgba(59,130,246,0.1);color:#60a5fa;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em;}
+    .brand-cta{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.625rem 1.25rem;background:rgba(255,255,255,0.05);color:#fff;font-size:0.875rem;font-weight:600;border-radius:10px;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s;}
+    .brand-cta:hover{background:rgba(59,130,246,0.2);border-color:rgba(59,130,246,0.4);}
+    @media(max-width:1024px){.brands-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.brands-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
 <body>
+  <div class="bg-flicker"></div><div class="bg-grain"></div>
+  <header class="site-header" id="header"><div class="header-inner"><a href="index.html" class="logo-link"><img src="logo.png" alt="Ivy Africa" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text" style="display:none">Ivy<span>Africa</span></span></a><nav class="nav-desktop"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><div class="dropdown nav-item"><span class="nav-link dropdown-toggle">Training <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span><div class="dropdown-menu"><a class="dropdown-item" href="training.html">Training Hub</a><div class="dropdown-divider"></div><a class="dropdown-item" href="training.html?vendor=comptia">CompTIA</a><a class="dropdown-item" href="training.html?vendor=pecb">PECB</a><a class="dropdown-item" href="training.html?vendor=isaca">ISACA</a><a class="dropdown-item" href="training.html?vendor=snapplify">SACE / Snapplify</a></div></div><a href="technology.html" class="nav-link active">Technology</a><a href="k12-edtech.html" class="nav-link">K12 & EdTech</a><a href="smme.html" class="nav-link">SMME</a><a href="consultancy.html" class="nav-link">Consultancy</a><a href="contact.html" class="nav-link">Contact</a></nav><a href="contact.html" class="header-cta">Get in Touch</a></div></header>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa"></a>
-    <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-    <nav>
-      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
-      <div class="nav-item">
-        <a href="training.html" class="nav-link">Training ▾</a>
-        <div class="dropdown">
-          <div class="dropdown-label">Certifications</div>
-          <a href="training.html?vendor=CompTIA">CompTIA</a>
-          <a href="training.html?vendor=PECB">PECB</a>
-          <a href="training.html?vendor=ISACA">ISACA</a>
-          <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
-          <div class="dropdown-label">Delivery</div>
-          <a href="training.html">Classroom</a>
-          <a href="training.html">Virtual Live</a>
-          <a href="training.html">On-Site</a>
-        </div>
-      </div>
-      <div class="nav-item"><a href="technology.html" class="nav-link active">Technology</a></div>
-      <div class="nav-item"><a href="k12-edtech.html" class="nav-link">K12 & EdTech</a></div>
-      <div class="nav-item"><a href="smme.html" class="nav-link">SMME</a></div>
-      <div class="nav-item"><a href="consultancy.html" class="nav-link">Consultancy</a></div>
-      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
-    </nav>
-    <a href="contact.html" class="cta-btn header-cta">Get a Quote</a>
-  </div>
-</header>
+  <section class="tech-hero"><div class="tech-hero-bg"></div><div class="tech-hero-content"><span class="section-label">Enterprise Technology</span><h1 class="tech-hero-title">World-Class <span class="accent">OEM Solutions</span> for Africa</h1><p class="tech-hero-desc">We partner with the world's leading technology manufacturers to deliver enterprise-grade hardware, software, and infrastructure solutions tailored for African organisations.</p></div></section>
 
-<section class="hero" style="min-height: 55vh; padding-top: 100px;">
-  <div class="hero-bg"></div>
-  <div class="hero-orb orb-1" style="width: 400px; height: 400px; opacity: 0.3;"></div>
-  <div class="hero-orb orb-2" style="width: 300px; height: 300px; opacity: 0.25;"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">CIO-Grade Infrastructure</div>
-    <h1>Enterprise Technology, <span>Architected Right</span></h1>
-    <p style="max-width: 600px;">We do not sell SKUs. We design infrastructure that meets your performance, security, compliance, and budget requirements — backed by Dell, Lenovo, Huawei, HP, and Eaton.</p>
-    <div class="hero-buttons">
-      <a href="contact.html" class="cta-btn">Request a Quote</a>
-      <a href="#solutions" class="cta-btn-outline">Explore Solutions</a>
-    </div>
-  </div>
-</section>
+  <section class="section"><div class="section-inner"><div class="section-header"><span class="section-label">Our OEM Partners</span><h2 class="section-title">Browse by Brand</h2><p class="section-subtitle">Click any brand to explore specific product categories, configurations, and pricing.</p></div><div class="brands-grid">
+    <div class="brand-card animate-on-scroll"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="22" font-weight="700">DELL</text></svg></div><h3 class="brand-name">Dell Technologies</h3><p class="brand-desc">Enterprise servers, laptops, desktops, storage solutions, and data centre infrastructure for organisations of every size.</p><div class="brand-tags"><span class="brand-tag">Servers</span><span class="brand-tag">Laptops</span><span class="brand-tag">Storage</span></div><a href="contact.html?subject=Dell+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll stagger-1"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="20" font-weight="700">lenovo</text></svg></div><h3 class="brand-name">Lenovo</h3><p class="brand-desc">ThinkPad, ThinkCentre, Yoga, and Legion series. Business-class reliability with cutting-edge performance and AI-ready devices.</p><div class="brand-tags"><span class="brand-tag">ThinkPad</span><span class="brand-tag">Data Centre</span><span class="brand-tag">AI PC</span></div><a href="contact.html?subject=Lenovo+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll stagger-2"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="20" font-weight="700">HUAWEI</text></svg></div><h3 class="brand-name">Huawei</h3><p class="brand-desc">Networking, cloud infrastructure, smart devices, and 5G-ready enterprise solutions. Secure, scalable, and future-proof.</p><div class="brand-tags"><span class="brand-tag">Networking</span><span class="brand-tag">Cloud</span><span class="brand-tag">5G</span></div><a href="contact.html?subject=Huawei+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="24" font-weight="700">hp</text></svg></div><h3 class="brand-name">HP</h3><p class="brand-desc">EliteBook, ProBook, Z workstations, and printers. The world's most secure PCs with Wolf Security built in.</p><div class="brand-tags"><span class="brand-tag">EliteBook</span><span class="brand-tag">Printers</span><span class="brand-tag">Wolf Security</span></div><a href="contact.html?subject=HP+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll stagger-1"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="20" font-weight="700">IBM</text></svg></div><h3 class="brand-name">IBM</h3><p class="brand-desc">Hybrid cloud, AI with Watson, mainframe modernisation, and cybersecurity solutions for enterprise transformation.</p><div class="brand-tags"><span class="brand-tag">Watson AI</span><span class="brand-tag">Hybrid Cloud</span><span class="brand-tag">Security</span></div><a href="contact.html?subject=IBM+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll stagger-2"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="20" font-weight="700">EATON</text></svg></div><h3 class="brand-name">Eaton</h3><p class="brand-desc">Power management, UPS systems, rack solutions, and data centre infrastructure ensuring 99.999% uptime.</p><div class="brand-tags"><span class="brand-tag">UPS</span><span class="brand-tag">Power</span><span class="brand-tag">Racks</span></div><a href="contact.html?subject=Eaton+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="20" font-weight="700">ASUS</text></svg></div><h3 class="brand-name">ASUS</h3><p class="brand-desc">ExpertBook, ProArt, and ROG series. High-performance computing for creators, gamers, and business professionals.</p><div class="brand-tags"><span class="brand-tag">ExpertBook</span><span class="brand-tag">ProArt</span><span class="brand-tag">ROG</span></div><a href="contact.html?subject=ASUS+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll stagger-1"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="18" font-weight="700">Microsoft</text></svg></div><h3 class="brand-name">Microsoft</h3><p class="brand-desc">Surface devices, Microsoft 365, Azure cloud services, and Copilot AI integration for modern workplaces.</p><div class="brand-tags"><span class="brand-tag">Surface</span><span class="brand-tag">Azure</span><span class="brand-tag">Copilot</span></div><a href="contact.html?subject=Microsoft+Enquiry" class="brand-cta">Enquire →</a></div>
+    <div class="brand-card animate-on-scroll stagger-2"><div class="brand-logo"><svg viewBox="0 0 140 50" fill="currentColor"><text x="10" y="35" font-family="Space Grotesk" font-size="20" font-weight="700">Canon</text></svg></div><h3 class="brand-name">Canon</h3><p class="brand-desc">Professional imaging, printing solutions, document management, and production print systems for enterprise.</p><div class="brand-tags"><span class="brand-tag">Printers</span><span class="brand-tag">Imaging</span><span class="brand-tag">Production</span></div><a href="contact.html?subject=Canon+Enquiry" class="brand-cta">Enquire →</a></div>
+  </div></div></section>
 
-<!-- PARTNER CAROUSEL -->
-<div class="carousel-section">
-  <div class="carousel-track">
-    <div class="carousel-item">DELL</div>
-    <div class="carousel-item">LENOVO</div>
-    <div class="carousel-item">HUAWEI</div>
-    <div class="carousel-item">HP</div>
-    <div class="carousel-item">EATON</div>
-    <div class="carousel-item">ASUS</div>
-    <div class="carousel-item">Microsoft</div>
-    <div class="carousel-item">Canon</div>
-    <div class="carousel-item">Pinnacle</div>
-    <div class="carousel-item">First Distribution</div>
-    <div class="carousel-item">DELL</div>
-    <div class="carousel-item">LENOVO</div>
-    <div class="carousel-item">HUAWEI</div>
-    <div class="carousel-item">HP</div>
-    <div class="carousel-item">EATON</div>
-    <div class="carousel-item">ASUS</div>
-    <div class="carousel-item">Microsoft</div>
-    <div class="carousel-item">Canon</div>
-    <div class="carousel-item">Pinnacle</div>
-    <div class="carousel-item">First Distribution</div>
-  </div>
-</div>
-
-<section id="solutions">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>Technology <span>Solutions</span></h2>
-      <p>End-to-end infrastructure across compute, storage, networking, power, and endpoints.</p>
-    </div>
-    <div class="card-grid card-grid-3">
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" class="showcase-img" alt="Servers">
-        <div class="showcase-body">
-          <h3>Data Centre & Server Infrastructure</h3>
-          <p>Dell PowerEdge and Lenovo ThinkSystem rack and tower servers. All-flash and hybrid storage arrays. Virtualisation-ready with VMware and Hyper-V certification.</p>
-          <div class="showcase-partners"><span>Dell</span><span>Lenovo</span><span>Huawei</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" class="showcase-img" alt="Networking">
-        <div class="showcase-body">
-          <h3>Enterprise Networking</h3>
-          <p>Huawei switches, routers, and wireless access points. SD-WAN, core aggregation, and campus Wi-Fi 6/6E. Full lifecycle support and configuration services.</p>
-          <div class="showcase-partners"><span>Huawei</span><span>Dell</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80" class="showcase-img" alt="Power">
-        <div class="showcase-body">
-          <h3>Power Protection & Management</h3>
-          <p>Eaton UPS systems from 1kVA to 3-phase modular. Rack PDUs, power distribution units, and environmental monitoring for mission-critical facilities.</p>
-          <div class="showcase-partners"><span>Eaton</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" class="showcase-img" alt="Laptops">
-        <div class="showcase-body">
-          <h3>Endpoint Computing</h3>
-          <p>Business-class laptops and desktops with vPro, TPM 2.0, and zero-touch provisioning. Dell Latitude, Lenovo ThinkPad, HP EliteBook, and ASUS ExpertBook.</p>
-          <div class="showcase-partners"><span>Dell</span><span>Lenovo</span><span>HP</span><span>ASUS</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" class="showcase-img" alt="Cloud">
-        <div class="showcase-body">
-          <h3>Cloud & Hybrid Infrastructure</h3>
-          <p>Azure Stack HCI, hyper-converged infrastructure, and backup appliances. Cloud-ready servers with direct-connect options to AWS, Azure, and Huawei Cloud.</p>
-          <div class="showcase-partners"><span>Dell</span><span>Lenovo</span><span>Huawei</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" class="showcase-img" alt="Security">
-        <div class="showcase-body">
-          <h3>Cybersecurity Hardware</h3>
-          <p>Next-gen firewalls, NAC appliances, SIEM collectors, and hardware security modules. Integrated with your identity and endpoint protection stack.</p>
-          <div class="showcase-partners"><span>Huawei</span><span>Dell</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a782?w=600&q=80" class="showcase-img" alt="Printing">
-        <div class="showcase-body">
-          <h3>Managed Print & Imaging</h3>
-          <p>Canon multifunction printers, production print systems, and document management solutions. Cost-per-page contracts and proactive supply management.</p>
-          <div class="showcase-partners"><span>Canon</span><span>HP</span></div>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80" class="showcase-img" alt="Software">
-        <div class="showcase-body">
-          <h3>Software & Licensing</h3>
-          <p>Microsoft 365, Windows Server, SQL Server, and Azure licensing. Volume licensing, SPLA, and CSP programmes with true-up support.</p>
-          <div class="showcase-partners"><span>Microsoft</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="background: var(--bg-panel);">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>How We <span>Deliver</span></h2>
-      <p>From discovery to deployment and beyond — a proven 4-step engagement model.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="num">1</div>
-        <h3>Discovery & Assessment</h3>
-        <p>We audit your current environment, map business requirements, and identify gaps in performance, security, and compliance.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">2</div>
-        <h3>Architecture & Quote</h3>
-        <p>Vendor-neutral solution design with TCO analysis, migration planning, and risk mitigation. No inflated specs.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">3</div>
-        <h3>Procure & Deploy</h3>
-        <p>Direct vendor relationships through Pinnacle and First Distribution ensure competitive pricing and fast delivery.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">4</div>
-        <h3>Support & Optimise</h3>
-        <p>Ongoing health checks, capacity planning, warranty management, and lifecycle refresh planning.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-inner">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-      <div>
-        <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px;">Built for <span class="gradient-text">Enterprise Procurement</span></h2>
-        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">We understand public sector tender processes, SITA frameworks, B-BBEE requirements, and treasury regulations. Our proposals include full compliance documentation.</p>
-        <ul class="feature-list">
-          <li>SITA-aligned supplier status</li>
-          <li>B-BBEE Level 1 contributor</li>
-          <li>Full tender response support</li>
-          <li>Asset tagging and registry setup</li>
-          <li>3-year total cost of ownership models</li>
-        </ul>
-      </div>
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Enterprise" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle);">
-    </div>
-  </div>
-</section>
-
-<section style="text-align: center; background: var(--bg-panel);">
-  <div class="section-inner">
-    <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 12px;">Ready for a <span class="gradient-text">Technology Refresh</span>?</h2>
-    <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 28px;">Tell us what you are running today. We will architect what you need tomorrow.</p>
-    <a href="contact.html" class="cta-btn" style="padding: 14px 32px; font-size: 15px;">Request Enterprise Quote</a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="Ivy Africa" style="height: 36px;"></a>
-        <p>Enterprise technology, professional training, and digital transformation — delivered with African context and global standards. Founded 2016. Reg: 2016/041769/07.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/ivyafricasa/" target="_blank" aria-label="Facebook">f</a>
-          <a href="https://za.linkedin.com/company/ivy-africa" target="_blank" aria-label="LinkedIn">in</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Divisions</h4>
-        <a href="training.html">Training</a>
-        <a href="technology.html">Technology</a>
-        <a href="k12-edtech.html">K12 & EdTech</a>
-        <a href="smme.html">SMME</a>
-        <a href="consultancy.html">Consultancy</a>
-      </div>
-      <div class="footer-col">
-        <h4>Certifications</h4>
-        <a href="training.html?vendor=CompTIA">CompTIA</a>
-        <a href="training.html?vendor=PECB">PECB</a>
-        <a href="training.html?vendor=ISACA">ISACA</a>
-        <a href="training.html?vendor=Snapplify">SACE / Snapplify</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="tel:0518800404">051 880 0404</a>
-        <a href="contact.html">Enquiry Form</a>
-        <a href="contact.html">Aliwal North, EC</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Ivy Africa. All rights reserved.</span>
-      <span>Reg: 2016/041769/07 · Aliwal North, Eastern Cape, South Africa</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-document.querySelector('.mobile-toggle').addEventListener('click', () => {
-  document.querySelector('nav').classList.toggle('open');
-});
-</script>
-
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="Ivy Africa" class="logo-img" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=font-family:Space+Grotesk;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:1rem>Ivy<span style=color:#3b82f6>Africa</span></div>')"><p>Empowering Africa through Learning, Technology and Innovation.</p><div class="footer-social"><a href="https://facebook.com/ivyafrica" target="_blank" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://linkedin.com/company/ivyafrica" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div></div><div class="footer-links"><h4 class="footer-title">Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#story">Our Story</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links"><h4 class="footer-title">Solutions</h4><ul><li><a href="training.html">Training</a></li><li><a href="technology.html">Technology</a></li><li><a href="k12-edtech.html">K12 & EdTech</a></li><li><a href="smme.html">SMME</a></li><li><a href="consultancy.html">Consultancy</a></li></ul></div><div class="footer-links"><h4 class="footer-title">Contact</h4><ul><li><a href="mailto:info@ivyafrica.co.za">info@ivyafrica.co.za</a></li><li><a href="tel:+27101234567">+27 10 123 4567</a></li><li>Johannesburg, South Africa</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Ivy Africa. All rights reserved.</p><p>Empowering Africa through Learning, Technology and Innovation.</p></div></div></footer>
+  <script>window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',window.scrollY>50);});const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));</script>
 </body>
 </html>
